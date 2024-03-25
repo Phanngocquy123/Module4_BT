@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -26,6 +27,18 @@ public class UserServiceImpl implements UserService {
     public boolean checkExist(Predicate<User> predicate) {
         return userRepository.findAll(User.class).stream()
                 .anyMatch(predicate);
+    }
+
+    @Override
+    public User findSingle(Predicate<User> predicate) {
+        return userRepository.findAll(User.class).stream()
+                .filter(predicate).findFirst().orElse(null);
+    }
+
+    @Override
+    public List<User> findBy(Predicate<User> predicate) {
+        return userRepository.findAll(User.class).stream()
+                .filter(predicate).collect(Collectors.toList());
     }
 
     @Override

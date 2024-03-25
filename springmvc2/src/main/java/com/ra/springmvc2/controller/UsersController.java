@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Controller
-@RequestMapping("/users")
+@RequestMapping("/admin/users")
 public class UsersController {
     private UserService userService;
     private ModelMapper modelMapper;
@@ -54,7 +54,7 @@ public class UsersController {
     @GetMapping("/create")
     public String create(Model model) {
         model.addAttribute("user", new UserRequest());
-        return "users/create";
+        return "/users/create";
     }
 
     @PostMapping("/create")
@@ -66,7 +66,7 @@ public class UsersController {
         if (user.getImage() == null || user.getImage().isEmpty())
             bindingResult.addError(new FieldError("user", "image", "Ảnh không được bỏ trống"));
         if (bindingResult.hasErrors())
-            return "users/create";
+            return "/users/create";
         user.setAvatar(storageService.upload(user.getImage()));
         User entity = modelMapper.map(user, User.class);
         userService.add(entity);
@@ -99,5 +99,6 @@ public class UsersController {
         userService.remove(id);
         return "redirect:/users";
     }
+
 }
 

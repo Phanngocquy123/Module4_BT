@@ -1,0 +1,26 @@
+com/web/jpa/service/FileStorageService.java
+ com.web.jpa.service.FileStorageService
+com/web/jpa/entity/User.java
+ com.web.jpa.entity.User
+com/web/jpa/controller/HomeController.java
+ com.web.jpa.controller.HomeController
+com/web/jpa/config/SpringConfig.java
+ com.web.jpa.config.SpringConfig
+com/web/jpa/controller/LoginController.java
+ com.web.jpa.controller.LoginController
+com/web/jpa/repository/ComputerRepository.java
+ com.web.jpa.repository.ComputerRepository
+com/web/jpa/service/impl/FileStorageServiceImpl.java
+ com.web.jpa.service.impl.FileStorageServiceImpl
+com/web/jpa/filter/AuthenticationFilter.java
+ com.web.jpa.filter.AuthenticationFilter
+com/web/jpa/repository/UsersRepository.java
+ com.web.jpa.repository.UsersRepository
+com/web/jpa/entity/Computer.java
+ com.web.jpa.entity.Computer
+com/web/jpa/entity/UserRequest.java
+ com.web.jpa.entity.UserRequest
+com/web/jpa/config/WebInitializer.java
+ com.web.jpa.config.WebInitializer
+com/web/jpa/controller/UsersController.java
+ com.web.jpa.controller.UsersController

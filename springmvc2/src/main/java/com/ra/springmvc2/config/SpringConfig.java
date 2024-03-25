@@ -35,8 +35,8 @@ public class SpringConfig implements WebMvcConfigurer, ApplicationContextAware {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/uploads/**")
-                .addResourceLocations("/WEB-INF/uploads/");
+        registry.addResourceHandler("/uploads/**", "/assets/**")
+                .addResourceLocations("/WEB-INF/uploads/", "/WEB-INF/assets/");
     }
 
     @Override
